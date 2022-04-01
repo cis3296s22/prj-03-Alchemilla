@@ -27,7 +27,6 @@
  * redistribute the Software for such purposes.
  */
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;

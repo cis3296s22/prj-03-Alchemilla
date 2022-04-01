@@ -10,8 +10,6 @@ public class CalendarGen {
     public GregorianCalendar[] genCalendarEntries(
             GregorianCalendar startDate, Integer timeDelta, Integer numEntries){
 
-
-
         if (numEntries == 0){ //default number of entries is 30
             numEntries = 30;
         }
@@ -21,7 +19,6 @@ public class CalendarGen {
 
         GregorianCalendar[] entries = new GregorianCalendar[numEntries];
 
-
         for (int i = 0; i<numEntries;i++){
             entries[0]=temp;
             next = (GregorianCalendar) temp.clone();
@@ -29,7 +26,6 @@ public class CalendarGen {
             temp = (GregorianCalendar) next.clone();
 
         }
-
 
         return entries;
 
