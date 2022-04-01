@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="prj-03-Alchemilla:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/prj_03_Alchemilla_jar</output-path>
+    <root id="archive" name="prj-03-Alchemilla.jar">
+      <element id="module-output" name="prj-03-Alchemilla" />
+      <element id="dir-copy" path="$PROJECT_DIR$/images" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources/images" />
+    </root>
+  </artifact>
+</component>

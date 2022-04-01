@@ -32,6 +32,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 import javax.swing.*;
 
@@ -72,14 +75,14 @@ public class MenuLayoutDemo {
      * Create the GUI and show it. For thread safety, this method should be
      * invoked from the event-dispatching thread.
      */
-    private static void createAndShowGUI() {
+    private static void createAndShowGUI() throws URISyntaxException {
         // Create and set up the window.
         JFrame frame = new JFrame("MenuLayoutDemo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ImageIcon image = getImage("testPlant.jpg");
 
-
-        ImageIcon testPlant = new ImageIcon("./testPlant.jpg");
-        JLabel plantLabel= new JLabel(testPlant);
+      //  ImageIcon testPlant = new ImageIcon(image);
+        JLabel plantLabel= new JLabel(image);
         plantLabel.setBounds(10,10,400,400);
         // Create and set up the content pane.
         MenuLayoutDemo demo = new MenuLayoutDemo();
@@ -97,7 +100,11 @@ public class MenuLayoutDemo {
         // creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                createAndShowGUI();
+                try {
+                    createAndShowGUI();
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -139,5 +146,24 @@ public class MenuLayoutDemo {
                 }
             }
         }
+    }
+
+
+    private static ImageIcon getImage(String filename){
+        URL resource = MenuLayoutDemo.class.getClassLoader().getResource("images/testPlant.jpg");
+
+        ImageIcon image = null;
+
+        if (resource == null) {
+            throw new IllegalArgumentException("file not found!");
+        } else {
+
+            // failed if files have whitespaces or special characters
+            //return new File(resource.getFile());
+
+           image = new ImageIcon(resource);
+        }
+
+        return image;
     }
 }
