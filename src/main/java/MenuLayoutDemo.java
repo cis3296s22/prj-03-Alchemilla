@@ -43,17 +43,20 @@ import javax.swing.*;
 
 public class MenuLayoutDemo {
     public JMenuBar createMenuBar() {
-        JMenuBar menuBar = new JMenuBar();
+        JMenuBar menuBar = new JMenuBar(); // Creates main navigational menu
         menuBar.setLayout(new BoxLayout(menuBar, BoxLayout.PAGE_AXIS));
-        menuBar.add(createMenu("Menu 1"));
-        menuBar.add(createMenu("Menu 2"));
-        menuBar.add(createMenu("Menu 3"));
+        menuBar.add(createMenu("Schedule"));
+        menuBar.add(createMenu("View Plant List"));
+        menuBar.add(createMenu("Export"));
 
         menuBar.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, Color.BLACK));
         return menuBar;
     }
 
     // used by createMenuBar
+    // Menu Options in Each Category
+    // Schedule: View Schedule, Add People to Schedule
+    // TO BE COMPLETED
     public JMenu createMenu(String title) {
         JMenu m = new HorizontalMenu(title);
         m.add("Menu item #1 in " + title);
