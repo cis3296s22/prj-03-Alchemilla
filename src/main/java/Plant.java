@@ -9,7 +9,6 @@ public class Plant {
     private String instructions;
     private String description;
 
-
     public Plant(
             BufferedImage plantImage,
             String plantName,
@@ -26,7 +25,6 @@ public class Plant {
         this.instructions = instructions;
         this.description = description;
     }
-
 
     public String getInstructions() {
         return instructions;
