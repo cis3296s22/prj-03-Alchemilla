@@ -1,28 +1,33 @@
-# Project Name
-Put here a short paragraph describing your project. 
-Adding an screenshot or a mockup of your application in action would be nice.  
+Project Name
 
-![This is a screenshot.](images.png)
-# How to run
-Provide here instructions on how to use your application.   
-- Download the latest binary from the Release section on the right on GitHub.  
-- On the command line uncompress using
-```
-tar -xzf  
-```
-- On the command line run with
-```
-./hello
-```
-- You will see Hello World! on your terminal. 
+Alchemilla 
+A Java Based House-Plant Care Scheduling Desktop Application
 
-# How to contribute
-Follow this project board to know the latest status of the project: [http://...]([http://...])  
+Product Description
 
-### How to build
-- Use this github repository: ... 
-- Specify what branch to use for a more stable release or for cutting edge development.  
-- Use InteliJ 11
-- Specify additional library to download if needed 
-- What file and target to compile and run. 
-- What is expected to happen when the app start. 
+	Alchemilla is a home plant-care scheduling solution designed to simplify the daunting but rewarding act of caring for plants at home. Aspiring growers will be able to upload information about house plants, or to use the program to find information about houseplants. They can then organize this information by selecting plants they wish to care for, and the program will generate a care schedule. This schedule can then be exported to a common calendar application such as Outlook Calendar. The name Alchemilla was chosen because this plant is sometimes referred to as the 'Forget-Me-Not'. The purpose of this application is to assist plant care enthusiasts in simplifying the management of their care routines, ensuring they never forget to water another plant. Upon completing a scheduling and adding it to their calendar, aspiring growers can rest assured they will have all of the information they need to competently care for their plants. 
+
+Install Instructions. 
+
+Create a folder called Alchemillia anywhere in your file system.
+Unpack the jar from the zip file. 
+cd to your jar's location, and run 'chmod +x prj_03_Alchemilla.jar'
+Alchemilla is now installed.
+
+
+
+Build Instrutions
+
+Open project in intellij, make sure to run maven update.
+Go to File->Project-Structure
+	Select Artifacts from the menu on the left. 
+	Create a new artifact. From this menu select JAR->From-Modules-With-Dependencies
+	Select MenuLayoutDemo.java as the main class
+Go to Build->Build-Artifacts. Select build from the submenu.
+There is now a new 'out' folder. 
+Use cd to navigate to ~/out/artifacts/prj_03_Alchemilla_jar in CLI.
+Run chmod +x prj_03_alchemilla.jar
+You can now move the jar to any folder and run by double clicking.
+
+	
+	
