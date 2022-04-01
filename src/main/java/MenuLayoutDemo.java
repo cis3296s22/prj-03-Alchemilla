@@ -84,12 +84,14 @@ public class MenuLayoutDemo {
         ImageIcon testPlant = new ImageIcon("./testPlant.jpg");
         JLabel plantLabel= new JLabel(testPlant);
         plantLabel.setBounds(10,10,400,400);
+
         // Create and set up the content pane.
         MenuLayoutDemo demo = new MenuLayoutDemo();
         Container contentPane =  frame.getContentPane();
         contentPane.setBackground(Color.WHITE); // contrasting bg
         contentPane.add(demo.createMenuBar(), BorderLayout.LINE_START);
         contentPane.add(plantLabel, BorderLayout.LINE_END);
+
         // Display the window.
         frame.setSize(1000, 1000);
         frame.setVisible(true);
@@ -115,7 +117,6 @@ public class MenuLayoutDemo {
         public Dimension getMinimumSize() {
             return getPreferredSize();
         }
-
         public Dimension getMaximumSize() {
             return getPreferredSize();
         }
