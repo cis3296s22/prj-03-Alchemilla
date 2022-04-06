@@ -1,8 +1,11 @@
+package plant;
+
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
-public class Profile {
+public class Profile implements Serializable {
 
     private String name;
     private LinkedList<Plant> plants;

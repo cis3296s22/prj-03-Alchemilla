@@ -1,4 +1,4 @@
-/*
+package plant;/*
  *
  * Copyright (c) 1998 Sun Microsystems, Inc. All Rights Reserved.
  *
@@ -32,7 +32,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 
@@ -42,7 +41,7 @@ import javax.swing.*;
  * @author ges
  * @author kwalrath
  */
-/* MenuLayoutDemo.java requires no other files. */
+/* plant.MenuLayoutDemo.java requires no other files. */
 
 public class MenuLayoutDemo {
     public JMenuBar createMenuBar() {
@@ -77,7 +76,7 @@ public class MenuLayoutDemo {
      */
     private static void createAndShowGUI() throws URISyntaxException {
         // Create and set up the window.
-        JFrame frame = new JFrame("MenuLayoutDemo");
+        JFrame frame = new JFrame("plant.MenuLayoutDemo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ImageIcon image = getImage("testPlant.jpg");
 

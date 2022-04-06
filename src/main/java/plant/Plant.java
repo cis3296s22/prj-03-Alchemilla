@@ -1,6 +1,9 @@
-import java.awt.image.BufferedImage;
+package plant;
 
-public class Plant {
+import java.awt.image.BufferedImage;
+import java.io.Serializable;
+
+public class Plant implements Serializable {
     private BufferedImage plantImage;
     private String plantName;
     private Integer waterDelta;
