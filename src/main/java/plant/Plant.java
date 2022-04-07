@@ -19,8 +19,8 @@ public class Plant implements Serializable {
             Integer waterDelta,
             Integer foodDelta,
             String food,
-            String instructions,
-            String description) {
+            String instructions, //lower scrollable pane
+            String description) {//ditto
         this.plantImage = plantImage;
         this.plantName = plantName;
         this.waterDelta = waterDelta;
