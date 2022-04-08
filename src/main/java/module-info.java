@@ -11,6 +11,8 @@ module com.example.alchemillafx {
     requires eu.hansolo.tilesfx;
     requires java.desktop;
     requires java.sql;
+    requires javafx.graphics;
+    requires javafx.base;
 
     opens com.example.alchemillafx to javafx.fxml;
     exports com.example.alchemillafx;
