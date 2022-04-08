@@ -34,7 +34,7 @@ public class PlantController extends Application
     private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
+    protected void onButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 

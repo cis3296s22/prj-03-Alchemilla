@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 
 
-<VBox fx:id = "vbox" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alchemillafx.PlantController">
-   <children>
-      <Pane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" />
+<?import javafx.scene.control.*?>
+<GridPane fx:id = "vbox" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alchemillafx.PlantController">
+   <padding><Insets top = "25" right="25" bottom = "10" left = "25"/></padding>
 
-   </children>
-</VBox>
+   <Text text = "Submit Plant info" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+
+   <!--Insert a lot more fields here, to put into Plant Object-->
+   <Label text = "Plant Name: " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+   <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+   <Label text = "Need like 8 more fields but yeah" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+   <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+
+</GridPane>
