@@ -48,6 +48,8 @@ public class Plant implements Serializable {
 
         return ImageIO.read( Plant.class.getResource(plantImage));
     }
+    
+    
 
     public String getPlantName() {
         return plantName;
