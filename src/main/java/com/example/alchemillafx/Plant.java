@@ -1,10 +1,12 @@
 package com.example.alchemillafx;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.io.Serializable;
 
 public class Plant implements Serializable {
-    private BufferedImage plantImage;
+    private String plantImage;
     private String plantName;
     private Integer waterDelta;
     private Integer foodDelta;
@@ -14,7 +16,7 @@ public class Plant implements Serializable {
 
 
     public Plant(
-            BufferedImage plantImage,
+            String plantImage,
             String plantName,
             Integer waterDelta,
             Integer foodDelta,
@@ -39,8 +41,12 @@ public class Plant implements Serializable {
         return description;
     }
 
-    public BufferedImage getPlantImage() {
-        return plantImage;
+    public BufferedImage getPlantImage() throws IOException {
+
+
+
+
+        return ImageIO.read( Plant.class.getResource(plantImage));
     }
 
     public String getPlantName() {

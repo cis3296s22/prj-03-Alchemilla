@@ -10,7 +10,7 @@ public class SerializeClassData {
 /**
     Here is an example of a path to send.
 
-    String plantPath = "src/main/resources/data/plant.txt";
+    String plantPath = "src/main/resources/plantPictures/plant.ext";
 
 **/
     //TODO add exception handling
@@ -20,8 +20,8 @@ public class SerializeClassData {
     }
 
 
-    public boolean storeProfile(String path, Plant plant){
-        return storeObject(path, plant);
+    public boolean storeProfile(String path, Profile p){
+        return storeObject(path, p);
     }
     //TODO add exception handling
     public Profile getProfile(String path) throws IOException, ClassNotFoundException {
@@ -45,7 +45,8 @@ public class SerializeClassData {
     private boolean storeObject(String path, Object ob){
 
         try {
-
+            File f = new File(path);
+            f.createNewFile();
             FileOutputStream fs = new FileOutputStream(path);
             ObjectOutputStream os = new ObjectOutputStream(fs);
             os.writeObject(ob);
