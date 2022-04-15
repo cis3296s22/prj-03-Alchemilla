@@ -12,9 +12,9 @@ public class Profile implements Serializable {
     private Calendar startDate;
 
     public Profile(String name, Calendar startDate) {
-        this.name = name;
-        this.plants = new LinkedList<Plant>();
-        this.startDate = startDate;
+        name = name;
+        plants = new LinkedList<>();
+        startDate = startDate;
     }
     public Profile(String name, LinkedList<Plant> plants, Calendar startDate) {
         this.name = name;
@@ -57,7 +57,7 @@ public class Profile implements Serializable {
     }
 
     public void addPlant(Plant plant){
-        this.plants.add(plant);
+        plants.add(plant);
     }
 
 

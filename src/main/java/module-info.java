@@ -6,6 +6,7 @@ module com.example.alchemillafx {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires java.desktop;
+    requires javafx.swing;
 
     opens com.example.alchemillafx to javafx.fxml;
     exports com.example.alchemillafx;
