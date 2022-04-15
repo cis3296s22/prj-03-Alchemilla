@@ -11,10 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.*;
 
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import javax.imageio.ImageIO;
 
 public class PlantController extends Application
@@ -76,20 +73,27 @@ public class PlantController extends Application
 
 
         // NEEDS PLANT IMAGE PATH ADAPTER
-        Plant plant = new Plant(plantimagepath, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, descString, instructionString);
+        Plant plant = new Plant(readImage(imageString), nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, descString, instructionString);
     }
 
-    private BufferedImage (String path)
+    private BufferedImage readImage(String path)
     {
+        BufferedImage image;
+
         try
         {
-            BufferedImage image = ImageIO.read();
+            File file = new File(path);
+            image = ImageIO.read(file);
 
         }
         catch (IOException e)
         {
             e.printStackTrace();
+            image = null;
+            return image; // this gotta be bad programming
         }
+
+        return image;
     }
 
     public static void main (String[] args)

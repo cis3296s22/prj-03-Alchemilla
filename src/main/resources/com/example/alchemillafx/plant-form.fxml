@@ -26,13 +26,16 @@
    <TextField fx:id = "food" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
 
    <Label text = "Instructions: " GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-   <TextField fx:id = "instructions" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+   <TextField fx:id = "instruction" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
 
    <Label text = "Description: " GridPane.columnIndex="0" GridPane.rowIndex="6"/>
    <TextField fx:id = "description" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
 
+   <Label text = "Plant Image Path: " GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+   <TextField fx:id = "plantimagepath" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
    <HBox spacing="10" alignment="bottom_right"
-         GridPane.columnIndex="1" GridPane.rowIndex="7">
+         GridPane.columnIndex="1" GridPane.rowIndex="8">
       <Button text="Submit Plant Information" onAction="#onButtonClick"/>
    </HBox>
 
