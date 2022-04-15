@@ -40,7 +40,9 @@ public class PlantController extends Application
     @FXML
     private TextField plantimagepath;
 
-
+    // HARDCODED
+    Profile profile;
+    String currentProfile = "joe";
 
     @Override
     public void start(Stage primaryStage) throws Exception
@@ -72,10 +74,19 @@ public class PlantController extends Application
         String instructionString = instruction.getText();
 
 
-        // NEEDS PLANT IMAGE PATH ADAPTER
-        Plant plant = new Plant(readImage(imageString), nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, descString, instructionString);
-    }
+        Plant plant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, descString, instructionString);
 
+        SerializeClassData sc = new SerializeClassData();
+        try {
+            profile = sc.getProfile(currentProfile);
+            profile.addPlant(plant);
+        }
+        catch (IOException | ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+    }
+/*
     private BufferedImage readImage(String path)
     {
         BufferedImage image;
@@ -95,7 +106,7 @@ public class PlantController extends Application
 
         return image;
     }
-
+*/
     public static void main (String[] args)
     {
         Application.launch(args);
