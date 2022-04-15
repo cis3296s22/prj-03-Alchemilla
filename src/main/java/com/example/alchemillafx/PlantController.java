@@ -51,6 +51,7 @@ public class PlantController
     @FXML
     protected void onButtonClick(ActionEvent ae) {
         // probably want to have something here that makes sure that all data entries are there from UI
+        // Maybe use alert
         //  actiontarget.setText("Welcome to JavaFX Application!");
 
         String imageString = plantimagepath.getText();
