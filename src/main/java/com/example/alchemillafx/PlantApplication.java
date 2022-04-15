@@ -21,12 +21,12 @@ public class PlantApplication extends Application
     {
         // Sets Title, Loads the FXML File
         primaryStage.setTitle("Enter Plant Info");
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("scene.fxml"));
-        String path = "@prj-03-Alchemilla/src/resources/com.example.alchemilla/plant-form.fxml";
-        FileInputStream stream = new FileInputStream(path);
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("plant-form.fxml"));
+        // String path = "@prj-03-Alchemilla/src/resources/com.example.alchemilla/plant-form.fxml";
+        // FileInputStream stream = new FileInputStream(path);
 
         // we vboxed up; creates pane and details
-        VBox box = new VBox(loader.load(stream));
+        VBox box = new VBox(loader.load(/*stream*/));
 
         Scene scene = new Scene(box, 2000, 2000); // arbitrary numbers
         primaryStage.setScene(scene);
