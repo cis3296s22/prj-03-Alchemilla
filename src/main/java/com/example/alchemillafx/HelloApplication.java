@@ -7,6 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Replacement for main class in JavaFX
+ * Loads scene and begins program
+ */
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
