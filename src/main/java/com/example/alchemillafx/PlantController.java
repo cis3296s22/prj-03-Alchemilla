@@ -52,8 +52,9 @@ public class PlantController
     protected void onButtonClick(ActionEvent ae) {
         // probably want to have something here that makes sure that all data entries are there from UI
         // Maybe use alert
-        //  actiontarget.setText("Welcome to JavaFX Application!");
+        // actiontarget.setText("Welcome to JavaFX Application!");
 
+        // Set Strings to pass into plant object
         String imageString = plantimagepath.getText();
         String nameString = plantname.getText();
         String waterString = water.getText();

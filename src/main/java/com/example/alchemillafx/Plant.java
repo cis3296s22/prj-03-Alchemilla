@@ -67,11 +67,8 @@ public class Plant implements Serializable {
      * @throws IOException cannot access file system or cannot find file
      * //TODO catch ioexception and return default image
      */
-    public BufferedImage getPlantImage() throws IOException {
-
-
-
-
+    public BufferedImage getPlantImage() throws IOException
+    {
         return ImageIO.read(Objects.requireNonNull(Plant.class.getResource(plantImage)));
     }
 
