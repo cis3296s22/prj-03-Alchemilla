@@ -25,6 +25,7 @@ public class RegistrationController {
     @FXML
     private Button submitButton;
 
+    @FXML
     protected void onClick(ActionEvent event) {
         Window owner = submitButton.getScene().getWindow();
 
