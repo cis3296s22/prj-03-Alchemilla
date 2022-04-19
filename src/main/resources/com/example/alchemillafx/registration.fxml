@@ -30,9 +30,11 @@
                GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <!-- Second Prompt: Email -->
+
     <Label text="Email Address: " GridPane.columnIndex="0"
            GridPane.rowIndex="2" >
     </Label>
+
     <!-- Add Email Text Field -->
     <TextField fx:id="emailInput" prefHeight="40"
                GridPane.columnIndex="1" GridPane.rowIndex="2"/>
