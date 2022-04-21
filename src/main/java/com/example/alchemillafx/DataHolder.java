@@ -4,6 +4,7 @@ public final class DataHolder {
 
     private SerializeClassData sc;
     private Profile prof;
+    private HelloController hc;
 
     private static DataHolder dataholder = null;
 
@@ -31,6 +32,9 @@ public final class DataHolder {
         this.prof = p;
     }
 
+    public void setController (HelloController hello) { this.hc = hello; }
+
+
 
     public SerializeClassData getClassData()
     {
@@ -41,4 +45,6 @@ public final class DataHolder {
     {
         return this.prof;
     }
+
+    public HelloController getHelloController() {return this.hc;}
 }

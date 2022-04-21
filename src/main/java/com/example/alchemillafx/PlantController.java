@@ -107,7 +107,9 @@ public class PlantController implements Initializable
             System.out.println(p.getPlantName());
         }
 
-        // HelloController.initialize();
+        // get current hello controller and update
+        HelloController hc = hold.getHelloController();
+        hc.initialize(null, null);
     }
 
     @Override

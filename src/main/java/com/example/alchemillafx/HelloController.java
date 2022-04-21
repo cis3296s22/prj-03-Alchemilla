@@ -218,7 +218,12 @@ public class HelloController implements Initializable {
             holder.setProfile(profile);
 
             LinkedList<Plant> plantLinkedList = profile.getPlants();
+            // plants.clear();
+
+            plants = new LinkedList<String>(); // Bad code, bad code
             Iterator i = plantLinkedList.iterator();
+            plantList.getItems().clear();
+
             while (i.hasNext()){
                Plant tempPlant = (Plant)i.next();
                plantList.getItems().add(tempPlant.getPlantName());
