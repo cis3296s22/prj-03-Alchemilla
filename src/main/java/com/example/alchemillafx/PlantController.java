@@ -67,24 +67,27 @@ public class PlantController implements Initializable
 
         // Set Strings to pass into plant object
         String imageString = plantimagepath.getText();
-        System.out.println("imageString = " + imageString);
         String nameString = plantname.getText();
-        System.out.println("nameString = " + nameString);
         String waterString = water.getText();
-        System.out.println("waterString = " + waterString);
         String foodDeltaString = fooddelta.getText();
-        System.out.println("foodDeltaString = " + foodDeltaString);
         String foodString = food.getText();
-        System.out.println("foodString = " + foodString);
         String descString = description.getText();
-        System.out.println("descString = " + descString);
         String instructionString = instruction.getText();
-        System.out.println("instructionString = " + instructionString);
 
-        System.out.println("current profile: " + this.currentProfile);
+        // System.out.println("current profile: " + this.currentProfile);
 
         Plant plant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, descString, instructionString);
+        Plant samePlant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, descString, instructionString);
+
         System.out.println("plant to be added: " + plant);
+        System.out.println("another plant diff hash: " + samePlant);
+        System.out.println("plant.getImagePath = " + plant.getImagePath());
+        System.out.println("plant.getPlantName = " + plant.getPlantName());
+        System.out.println("plant.getWaterDelta = " + plant.getWaterDelta());
+        System.out.println("plant.getFoodDelta = " + plant.getFoodDelta());
+        System.out.println("plant.getFood = " + plant.getFood());
+        System.out.println("plant.getDescription = " + plant.getDescription());
+        System.out.println("plant.getInstructions = " + plant.getInstructions());
 
         // Save to profile
         DataHolder hold = DataHolder.getInstance(); // get singleton object with passed data
@@ -94,6 +97,15 @@ public class PlantController implements Initializable
         System.out.println("name of profile is: " + profile.getName());
         profile.addPlant(plant);
         System.out.println("added this plant: " + plant);
+
+        // Verify the plants in the profile
+        LinkedList<Plant> lp = profile.getPlants();
+        Iterator i = lp.iterator();
+
+        while(i.hasNext()) {
+            Plant p = (Plant) i.next();
+            System.out.println(p.getPlantName());
+        }
     }
 
     @Override

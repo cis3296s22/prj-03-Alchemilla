@@ -97,6 +97,8 @@ public class Plant implements Serializable {
         return foodDelta;
     }
 
+    public String getImagePath(){return plantImage;}
+
     /**
      * get a string representation of the type of food/fertilizer this plant requires/prefers
      * @return String - name of plant food

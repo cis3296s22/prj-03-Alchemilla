@@ -181,7 +181,7 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1){
         SerializeClassData sc = new SerializeClassData();
-        // sc = new SerializeClassData();
+
         try {
             profile = sc.getProfile(currentProfile);
             System.out.println("HelloController profile: " + profile);
