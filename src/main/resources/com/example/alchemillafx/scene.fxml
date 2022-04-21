@@ -15,6 +15,7 @@
             <items>
                 <MenuItem fx:id="accountItem" text="Register New Account" onAction="#profileLaunch"/>
                 <MenuItem fx:id="plantItem" text="Register New Plant" onAction="#plantLaunch"/>
+                <MenuItem fx:id="update" text="Update" onAction="#updateGUI"/>
                 <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>

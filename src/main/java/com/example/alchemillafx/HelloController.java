@@ -74,6 +74,9 @@ public class HelloController implements Initializable {
     private MenuItem plantItem;
 
     @FXML
+    private MenuItem update;
+
+    @FXML
     private void plantLaunch(ActionEvent e)
     {
 
@@ -88,10 +91,7 @@ public class HelloController implements Initializable {
 
         Stage s = new Stage();
         PlantApplication plantApp = new PlantApplication();
-
-        // PlantController plantControl = /*(PlantController)*/ loader.getController();
-        // plantControl.setCurrentProfile(profile, sc);
-        // s.setUserData(sc);
+        ;
         try {
             plantApp.start(s);
         }
@@ -120,6 +120,12 @@ public class HelloController implements Initializable {
         {
 
         }
+    }
+
+    @FXML
+    private void updateGUI(ActionEvent e)
+    {
+        this.initialize(null, null);
     }
 
 
@@ -180,14 +186,35 @@ public class HelloController implements Initializable {
      */
     @Override
     public void initialize(URL arg0, ResourceBundle arg1){
+        DataHolder holder = DataHolder.getInstance();
         SerializeClassData sc = new SerializeClassData();
 
+        if (holder.getClassData() != null) // if the first time
+        {
+            sc = holder.getClassData();
+        }
+        else
+        {
+            holder.setClassData(sc);
+        }
+
         try {
-            profile = sc.getProfile(currentProfile);
+            /* if (holder.getClassData() != null) // this is very not good code
+            {
+                profile = holder.getProfile();
+            } */
+            // else
+            // {
+                profile = sc.getProfile(currentProfile);
+            // }
+            if (holder.getProfile() != null) // this is very not good code but i am lazy
+            {
+                profile = holder.getProfile();
+            }
+
             System.out.println("HelloController profile: " + profile);
 
-            DataHolder holder = DataHolder.getInstance();
-            holder.setClassData(sc);
+            // Get instance or create new instance of singleton obj and pass data
             holder.setProfile(profile);
 
             LinkedList<Plant> plantLinkedList = profile.getPlants();

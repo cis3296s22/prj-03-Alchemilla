@@ -106,6 +106,8 @@ public class PlantController implements Initializable
             Plant p = (Plant) i.next();
             System.out.println(p.getPlantName());
         }
+
+        // HelloController.initialize();
     }
 
     @Override
