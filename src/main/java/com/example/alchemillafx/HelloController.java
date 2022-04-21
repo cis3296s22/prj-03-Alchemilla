@@ -199,7 +199,7 @@ public class HelloController implements Initializable {
         }
 
         try {
-            /* if (holder.getClassData() != null) // this is very not good code
+            /* if (holder.getProfile() != null) // this is very not good code
             {
                 profile = holder.getProfile();
             } */
