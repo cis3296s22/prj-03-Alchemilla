@@ -76,8 +76,8 @@ public class PlantController implements Initializable
 
         // System.out.println("current profile: " + this.currentProfile);
 
-        Plant plant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, descString, instructionString);
-        Plant samePlant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, descString, instructionString);
+        Plant plant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, instructionString, descString);
+        Plant samePlant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, instructionString, descString);
 
         System.out.println("plant to be added: " + plant);
         System.out.println("another plant diff hash: " + samePlant);
