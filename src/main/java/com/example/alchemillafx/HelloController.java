@@ -60,6 +60,8 @@ public class HelloController implements Initializable {
     Profile profile; //actual profile object from which we gather plant objects etc.
     Plant currentPlant; //actual current plant object
 
+    // SerializeClassData sc;
+
     @FXML
     private void displayPlant(BufferedImage plant){
 
@@ -74,13 +76,22 @@ public class HelloController implements Initializable {
     @FXML
     private void plantLaunch(ActionEvent e)
     {
-        /*
+
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("plant-form.fxml"));
-        Parent root = loader.load();
-        */
+        try {
+            Parent root = loader.load();
+        }
+        catch (IOException ioe)
+        {
+            System.out.println("IOException");
+        }
 
         Stage s = new Stage();
         PlantApplication plantApp = new PlantApplication();
+
+        // PlantController plantControl = /*(PlantController)*/ loader.getController();
+        // plantControl.setCurrentProfile(profile, sc);
+        // s.setUserData(sc);
         try {
             plantApp.start(s);
         }
@@ -170,8 +181,15 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1){
         SerializeClassData sc = new SerializeClassData();
+        // sc = new SerializeClassData();
         try {
             profile = sc.getProfile(currentProfile);
+            System.out.println("HelloController profile: " + profile);
+
+            DataHolder holder = DataHolder.getInstance();
+            holder.setClassData(sc);
+            holder.setProfile(profile);
+
             LinkedList<Plant> plantLinkedList = profile.getPlants();
             Iterator i = plantLinkedList.iterator();
             while (i.hasNext()){

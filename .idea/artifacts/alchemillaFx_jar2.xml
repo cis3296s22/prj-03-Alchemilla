@@ -3,7 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/alchemillaFx_jar2</output-path>
     <root id="root">
       <element id="archive" name="alchemillaFx.jar">
-        <element id="module-output" name="alchemillaFx" />
+        <element id="module-output" name="alchemillafx" />
       </element>
       <element id="library" level="project" name="Maven: org.controlsfx:controlsfx:11.1.0" />
       <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:17.0.1" />
