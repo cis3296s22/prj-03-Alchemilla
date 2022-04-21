@@ -1,3 +1,7 @@
+/**
+ * Must include a module file to allow Maven to use JLink when compiling
+ */
+
 module com.example.alchemillafx {
     requires javafx.controls;
     requires javafx.fxml;

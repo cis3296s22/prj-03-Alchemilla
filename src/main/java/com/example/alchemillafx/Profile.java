@@ -9,10 +9,12 @@ import java.util.LinkedList;
  * Class for holding Profile information. Implements Serializable for convenient storage. Contains list of Plant objects
  */
 public class Profile implements Serializable {
-
-    private String name; //Name of Profile
-    private LinkedList<Plant> plants; //List of Plant objects
-    private Calendar startDate; //When to start schedule, used to calculate schedule
+    /**Name of Profile*/
+    private String name;
+    /**List of Plant objects*/
+    private LinkedList<Plant> plants;
+    /**When to start schedule, used to calculate schedule*/
+    private Calendar startDate;
 
     /**
      * Constructor with empty plant list
@@ -48,7 +50,7 @@ public class Profile implements Serializable {
     }
 
     /**
-     * @return name
+     * @return name current profile name
      */
     public String getName() {
         return name;
@@ -56,7 +58,7 @@ public class Profile implements Serializable {
 
     /**
      * change profile name
-     * @param name
+     * @param name Set the name of the Profile (user wants to change their name)
      */
     public void setName(String name) {
         this.name = name;
@@ -64,7 +66,7 @@ public class Profile implements Serializable {
 
     /**
      * get list of plants
-     * @return LinkedList<Plant>
+     * @return LinkedList with nodes of type Plant
      */
     public LinkedList<Plant> getPlants() {
         return plants;
@@ -72,20 +74,32 @@ public class Profile implements Serializable {
 
     /**
      * Replace list of plants with another list of plants
-     * @param plants LinkedList<Plant>
+     * @param plants LinkedList with nodes of type Plant
      */
     public void setPlants(LinkedList<Plant> plants) {
         this.plants = plants;
     }
 
+    /**
+     * When does this user want to start their schedule
+     * @return Basic Calendar object
+     */
     public Calendar getStartDate() {
         return startDate;
     }
 
+    /**
+     * If user wants to change his schedule start date
+     * @param startDate Must be a simple Calendar object
+     */
     public void setStartDate(Calendar startDate) {
         this.startDate = startDate;
     }
 
+    /**
+     * Add a plant object reference to this profile
+     * @param plant must be a completed plant
+     */
     public void addPlant(Plant plant){
         plants.add(plant);
     }

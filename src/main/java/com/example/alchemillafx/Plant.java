@@ -10,12 +10,20 @@ import java.util.Objects;
  * Class for storing information of a single plant. Implements serializable for easy storage.
  */
 public class Plant implements Serializable {
+
+    /** Path to image of plant*/
     private String plantImage;
+    /** name of this plant*/
     private String plantName;
+    /** How many days between watering*/
     private Integer waterDelta;
+    /** How many days between feeding*/
     private Integer foodDelta;
+    /** What kind of food*/
     private String food;
+    /** Care instructions. Arbitrarily long String*/
     private String instructions;
+    /** Description of plant. Arbitrarily long String*/
     private String description;
 
     /**

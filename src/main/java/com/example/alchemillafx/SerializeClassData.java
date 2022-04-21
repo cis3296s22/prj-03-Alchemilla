@@ -62,8 +62,8 @@ public class SerializeClassData {
      * Generalized adapter method for the ObjectInputStream class. Use to retrieve stored Object data
      * @param path Where the object is located, relative path
      * @return A general Object to be cast to the actual Object
-     * @throws IOException
-     * @throws ClassNotFoundException
+     * @throws IOException If file not found
+     * @throws ClassNotFoundException If file is not a true class file
      */
     private Object retrieveObject(String path) throws IOException, ClassNotFoundException {
         FileInputStream fs = new FileInputStream(path);

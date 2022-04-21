@@ -4,7 +4,8 @@ package com.example.alchemillafx;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-/*This class should be designed as a pseudo-functional class that takes a list of plants and a start date
+/**
+ * This class should be designed as a pseudo-functional class that takes a list of plants and a start date
 * calendar object and outputs a formatted string that can be uploaded into the microsoft graph api
 * This class is a proof of concept and not currently ready to work*/
 public class CalendarGen {
@@ -13,7 +14,7 @@ public class CalendarGen {
      * @param startDate root of calendar entries
      * @param timeDelta time between calendar entries
      * @param numEntries how many calendar entries we ultimately want
-     * @return
+     * @return Returns a list of GregorgianCalendar entries
      */
     public GregorianCalendar[] genCalendarEntries(
             GregorianCalendar startDate, Integer timeDelta, Integer numEntries){

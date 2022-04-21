@@ -47,13 +47,31 @@ public class HelloController implements Initializable {
      */
     @FXML
     private ImageView plantImage;
-
+    /**
+     * holds current profile. Currently hardcoded until ready to implment
+     */
     String currentProfile = "joe"; //holds current profile. Currently hardcoded until ready to implement real deal
+    /**
+     * The currently selected plant
+     */
     String currentPlantName; //Currently selected plant
+    /**
+     * List of strings to be used by the ListView Object to populate the scene
+     */
     LinkedList<String> plants = new LinkedList<String>(); //hold list of plant names owned by profile
+    /**
+     * Actual profile object from which we gather plants
+     */
     Profile profile; //actual profile object from which we gather plant objects etc.
+    /**
+     * actual current plant object
+     */
     Plant currentPlant; //actual current plant object
 
+    /**
+     * Populates the display field for plant images
+     * @param plant Buffered image of the plant you want to display
+     */
     @FXML
     private void displayPlant(BufferedImage plant){
 
@@ -86,7 +104,7 @@ public class HelloController implements Initializable {
     }
 
     /**
-     * Changes pane which displays Information about plant such as water & food deltas, plant name, etc.
+     * Changes pane which displays Information about plant such as water and food deltas, plant name, etc.
      * @param plant Plant object for which we wish to display information
      */
     @FXML

@@ -21,6 +21,10 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
+    /**
+     * Launches application
+     * @param args these args are currently ignored
+     */
     public static void main(String[] args) {
         launch();
     }
