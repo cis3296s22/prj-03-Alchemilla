@@ -207,7 +207,7 @@ public class HelloController implements Initializable {
             // {
                 profile = sc.getProfile(currentProfile);
             // }
-            if (holder.getProfile() != null) // this is very not good code but i am lazy
+            if (holder.getProfile() != null) // this might be the worst code logic i've ever written but it is 12:30
             {
                 profile = holder.getProfile();
             }
