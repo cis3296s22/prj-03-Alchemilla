@@ -4,11 +4,17 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.*;
+import javafx.event.ActionEvent;
+import javafx.stage.Stage;
 
 
 import java.awt.image.BufferedImage;
@@ -58,6 +64,53 @@ public class HelloController implements Initializable {
     private void displayPlant(BufferedImage plant){
 
     }
+
+    @FXML
+    private MenuItem accountItem;
+
+    @FXML
+    private MenuItem plantItem;
+
+    @FXML
+    private void plantLaunch(ActionEvent e)
+    {
+        /*
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("plant-form.fxml"));
+        Parent root = loader.load();
+        */
+
+        Stage s = new Stage();
+        PlantApplication plantApp = new PlantApplication();
+        try {
+            plantApp.start(s);
+        }
+
+        catch(Exception exception)
+        {
+
+        }
+    }
+
+    @FXML
+    private void profileLaunch(ActionEvent e)
+    {
+        /*
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("plant-form.fxml"));
+        Parent root = loader.load();
+        */
+
+        Stage stage = new Stage();
+        RegistrationApplication regApp = new RegistrationApplication();
+        try {
+            regApp.start(stage);
+        }
+
+        catch(Exception exception)
+        {
+
+        }
+    }
+
 
     /**
      * Display Plant description and Plant instruction data members in the scrollable pane

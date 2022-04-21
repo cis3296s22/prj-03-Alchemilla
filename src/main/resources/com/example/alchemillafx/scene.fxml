@@ -13,7 +13,9 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+                <MenuItem fx:id="accountItem" text="Register New Account" onAction="#profileLaunch"/>
+                <MenuItem fx:id="plantItem" text="Register New Plant" onAction="#plantLaunch"/>
+                <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
