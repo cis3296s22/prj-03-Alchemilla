@@ -6,6 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Replacement for main class in JavaFX
+ * Loads scene and begins program
+ */
 public class RegistrationApplication extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception{

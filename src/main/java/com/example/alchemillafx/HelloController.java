@@ -67,15 +67,28 @@ public class HelloController implements Initializable {
 
     }
 
+    /**
+     * MenuItem to open Account Registration Scene
+     */
     @FXML
     private MenuItem accountItem;
 
+    /**
+     * MenuItem to open Plant Form
+     */
     @FXML
     private MenuItem plantItem;
 
+    /**
+     * Calls initialize() to update main scene
+     */
     @FXML
     private MenuItem update;
 
+    /**
+     * plantItem on click method to launch plant form scene
+     * @param e plantItem has been clicked
+     */
     @FXML
     private void plantLaunch(ActionEvent e)
     {
@@ -102,6 +115,10 @@ public class HelloController implements Initializable {
         }
     }
 
+    /**
+     * accountItem on click method to launch account registration scene
+     * @param e accountItem has been clicked
+     */
     @FXML
     private void profileLaunch(ActionEvent e)
     {
@@ -122,6 +139,10 @@ public class HelloController implements Initializable {
         }
     }
 
+    /**
+     * update on click method to update main scene
+     * @param e update has been clicked
+     */
     @FXML
     private void updateGUI(ActionEvent e)
     {
@@ -156,7 +177,7 @@ public class HelloController implements Initializable {
     }
 
     /**
-     * Changes pane which displays Information about plant such as water & food deltas, plant name, etc.
+     * Changes pane which displays Information about plant such as water and food deltas, plant name, etc.
      * @param plant Plant object for which we wish to display information
      */
     @FXML
@@ -199,20 +220,13 @@ public class HelloController implements Initializable {
         }
 
         try {
-            /* if (holder.getProfile() != null) // this is very not good code
-            {
-                profile = holder.getProfile();
-            } */
-            // else
-            // {
-                profile = sc.getProfile(currentProfile);
-            // }
+            profile = sc.getProfile(currentProfile);
             if (holder.getProfile() != null) // this might be the worst code logic i've ever written but it is 12:30
             {
                 profile = holder.getProfile();
             }
 
-            System.out.println("HelloController profile: " + profile);
+            // System.out.println("HelloController profile: " + profile);
 
             // Get instance or create new instance of singleton obj and pass data
             holder.setProfile(profile);

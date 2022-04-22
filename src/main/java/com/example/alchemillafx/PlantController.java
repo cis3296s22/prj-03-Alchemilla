@@ -25,29 +25,51 @@ import javafx.event.ActionEvent;
 
 import javax.swing.*;
 
+/**
+ * JavaFX controller that displays a Plant Form, and stores the information from user input into plant object and stores that plant object into profile in memory.
+ */
+
 public class PlantController implements Initializable
 {
-    @FXML
-    private Text actiontarget;
-
+    /**
+     * User Input for plant name
+     */
     @FXML
     private TextField plantname;
 
+    /**
+     * User Input for water delta
+     */
     @FXML
     private TextField water;
 
+    /**
+     * User Input for food delta
+     */
     @FXML
     private TextField fooddelta;
 
+    /**
+     * User Input for food name
+     */
     @FXML
     private TextField food;
 
+    /**
+     * User Input for plant description
+     */
     @FXML
     private TextField description;
 
+    /**
+     * User Input for plant care instructions
+     */
     @FXML
     private TextField instruction;
 
+    /**
+     * User Input for the path to plant image
+     */
     @FXML
     private TextField plantimagepath;
 
@@ -55,11 +77,10 @@ public class PlantController implements Initializable
     public Profile profile;
     public String currentProfile = "joe"; // hardcoded, this doesn't change with set method for some reason
 
-    public String getCurrentProfile()
-    {
-        return currentProfile;
-    }
-
+    /**
+     * On click method for button, takes user input from TextFields, creates Plant object from them, stores into profile in memory.
+     * @param ae On click of "submit" button
+     */
     @FXML
     public void onButtonClick(ActionEvent ae) {
         // probably want to have something here that makes sure that all data entries are there from UI
@@ -74,11 +95,12 @@ public class PlantController implements Initializable
         String descString = description.getText();
         String instructionString = instruction.getText();
 
-        // System.out.println("current profile: " + this.currentProfile);
 
         Plant plant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, instructionString, descString);
-        Plant samePlant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, instructionString, descString);
+        // Plant samePlant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, instructionString, descString);
 
+        // PRINT OUT VALUES TO CONSOLE
+        /*
         System.out.println("plant to be added: " + plant);
         System.out.println("another plant diff hash: " + samePlant);
         System.out.println("plant.getImagePath = " + plant.getImagePath());
@@ -88,53 +110,35 @@ public class PlantController implements Initializable
         System.out.println("plant.getFood = " + plant.getFood());
         System.out.println("plant.getDescription = " + plant.getDescription());
         System.out.println("plant.getInstructions = " + plant.getInstructions());
+        */
 
         // Save to profile
         DataHolder hold = DataHolder.getInstance(); // get singleton object with passed data
         SerializeClassData sc = hold.getClassData();
         profile = hold.getProfile();
-        System.out.println("Plant Controller profile from singleton: " + profile);
-        System.out.println("name of profile is: " + profile.getName());
+        // System.out.println("Plant Controller profile from singleton: " + profile);
+        // System.out.println("name of profile is: " + profile.getName());
         profile.addPlant(plant);
-        System.out.println("added this plant: " + plant);
+        // System.out.println("added this plant: " + plant);
 
         // Verify the plants in the profile
+        /*
         LinkedList<Plant> lp = profile.getPlants();
         Iterator i = lp.iterator();
 
         while(i.hasNext()) {
             Plant p = (Plant) i.next();
             System.out.println(p.getPlantName());
-        }
+        } */
 
         // get current hello controller and update
         HelloController hc = hold.getHelloController();
         hc.initialize(null, null);
     }
 
+    /**
+     * Method for dynamically populating the screen. Call to update profile information.
+     */
     @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-
-    }
-/*
-    private BufferedImage readImage(String path)
-    {
-        BufferedImage image;
-
-        try
-        {
-            File file = new File(path);
-            image = ImageIO.read(file);
-
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-            image = null;
-            return image; // this gotta be bad programming
-        }
-
-        return image;
-    }
-*/
+    public void initialize(URL arg0, ResourceBundle arg1) {}
 }

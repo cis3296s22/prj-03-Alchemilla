@@ -11,9 +11,10 @@ import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.text.*;
 
-// import java.awt.image.BufferedImage;
-import java.io.*;
-// import javax.imageio.ImageIO;
+/**
+ * Replacement for main class in JavaFX
+ * Loads scene and begins program
+ */
 public class PlantApplication extends Application
 {
     @Override
