@@ -39,6 +39,8 @@ You now have a copy of the release zip!
   
  # Credits 
   Alexander Russakoff - Overall Design and Backend Implementation
+  
   Jason Zhang - GUI Development
+  
   Akshay Varghese - Documentation Lead and Technology Consultation
   
