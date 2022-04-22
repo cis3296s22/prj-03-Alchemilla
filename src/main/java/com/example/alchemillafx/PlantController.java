@@ -74,8 +74,10 @@ public class PlantController implements Initializable {
 
         // System.out.println("current profile: " + this.currentProfile);
 
-        Plant plant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, instructionString, descString);
-        Plant samePlant = new Plant(imageString, nameString, Integer.parseInt(waterString), Integer.parseInt(foodDeltaString), foodString, instructionString, descString);
+        Plant plant = new Plant(imageString, nameString, Integer.parseInt(waterString),
+                Integer.parseInt(foodDeltaString), foodString, instructionString, descString);
+        Plant samePlant = new Plant(imageString, nameString, Integer.parseInt(waterString),
+                Integer.parseInt(foodDeltaString), foodString, instructionString, descString);
 
         System.out.println("plant to be added: " + plant);
         System.out.println("another plant diff hash: " + samePlant);
@@ -112,7 +114,8 @@ public class PlantController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {}
-/*
+
+    /*
     private BufferedImage readImage(String path)
     {
         BufferedImage image;
@@ -128,5 +131,5 @@ public class PlantController implements Initializable {
         }
         return image;
     }
-*/
+    */
 }
