@@ -1,4 +1,4 @@
-# prj-03-Alchemilla
+# Alchemilla
 Alchemilla: A Java Based House-Plant Care Scheduling Application
 
 # Description
