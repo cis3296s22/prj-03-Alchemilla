@@ -36,18 +36,18 @@ public class ProfileTest {
      */
     @org.junit.Test
     public void shouldDisplayProfileName() {
-        assertEquals(str, prof.getName(),
+        assertEquals("TestProfile", prof.getName(),
                 "Should display \"TestProfile\" as name of profile:");
     }
 
     /**
-     * Call change name should alter profile name.
+     * Call to change name should alter profile name.
      */
     @org.junit.Test
     public void shouldDisplayNewName() {
         String strNew = "NewTestProfile";
         prof.setName(strNew);
-        assertEquals(strNew, prof.getName(),
+        assertEquals("NewTestProfile", prof.getName(),
                 "Should display \"NewTestProfile\" as the new name of profile:");
     }
 
@@ -91,8 +91,8 @@ public class ProfileTest {
      */
     @org.junit.Test
     public void shouldReturnNullStartDateWhenNoneSet() {
-        assertEquals(cal, prof.getStartDate(),
-                "Should have a single LinkedList of Plant objects:");
+        assertEquals(new GregorianCalendar(), prof.getStartDate(),
+                "Should have a null LinkedList of Plant objects:");
     }
 
     /**
@@ -102,8 +102,12 @@ public class ProfileTest {
     public void shouldReturnStartDateWhenSet() {
         cal.set(Calendar.YEAR, Calendar.JANUARY, Calendar.SATURDAY);
         prof.setStartDate(cal);
-        assertEquals(cal, prof.getStartDate(),
-                "Should have a single LinkedList of Plant objects:");
+
+        Calendar calTest = new GregorianCalendar();
+        calTest.set(Calendar.YEAR, Calendar.JANUARY, Calendar.SATURDAY);
+
+        assertEquals(calTest, prof.getStartDate(),
+                "Should have a LinkedList of one Plant object:");
     }
 
     /**
@@ -114,7 +118,25 @@ public class ProfileTest {
         cal.set(Calendar.YEAR, Calendar.JANUARY, Calendar.SATURDAY);
         prof = new Profile(str, cal);
 
-        assertEquals(cal, prof.getStartDate(),
-                "Should have a single LinkedList of Plant objects:");
+        Calendar calTest = new GregorianCalendar();
+        calTest.set(Calendar.YEAR, Calendar.JANUARY, Calendar.SATURDAY);
+
+        assertEquals(calTest, prof.getStartDate(),
+                "Should have a LinkedList of two Plant objects:");
+    }
+
+    /**
+     * Call to display plant list should display it if one set through constructor.
+     */
+    @org.junit.Test
+    public void shouldReturnPlantListFromConstruction() {
+        cal.set(Calendar.YEAR, Calendar.JANUARY, Calendar.SATURDAY);
+        plants.add(plant1); plants.add(plant2);
+        prof = new Profile(str, plants, cal);
+        LinkedList<Plant> plantsTest = new LinkedList<Plant>();
+        plantsTest.add(plant1); plantsTest.add(plant2);
+
+        assertEquals(plantsTest, prof.getPlants(),
+                "Should have a LinkedList of two Plant objects:");
     }
 }
