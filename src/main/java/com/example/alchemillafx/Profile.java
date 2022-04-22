@@ -9,7 +9,6 @@ import java.util.LinkedList;
  * Class for holding Profile information. Implements Serializable for convenient storage. Contains list of Plant objects
  */
 public class Profile implements Serializable {
-
     private String name; //Name of Profile
     private LinkedList<Plant> plants; //List of Plant objects
     private Calendar startDate; //When to start schedule, used to calculate schedule
@@ -89,6 +88,4 @@ public class Profile implements Serializable {
     public void addPlant(Plant plant){
         plants.add(plant);
     }
-
-
 }

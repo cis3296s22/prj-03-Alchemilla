@@ -122,7 +122,7 @@ public class ProfileTest {
         calTest.set(Calendar.YEAR, Calendar.JANUARY, Calendar.SATURDAY);
 
         assertEquals(calTest, prof.getStartDate(),
-                "Should have a LinkedList of two Plant objects:");
+                "Should have the calendar set during constructor:");
     }
 
     /**

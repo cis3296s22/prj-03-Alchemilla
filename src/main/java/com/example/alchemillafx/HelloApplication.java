@@ -23,7 +23,6 @@ public class HelloApplication extends Application {
         DataHolder datahold = DataHolder.getInstance();
         datahold.setController(helloC);
 
-
         stage.setTitle("Alchemilla");
         stage.setScene(scene);
         stage.show();
@@ -32,6 +31,5 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }
 

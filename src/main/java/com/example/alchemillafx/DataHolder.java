@@ -1,21 +1,16 @@
 package com.example.alchemillafx;
 
 public final class DataHolder {
-
     private SerializeClassData sc;
     private Profile prof;
     private HelloController hc;
 
     private static DataHolder dataholder = null;
 
-    private DataHolder()
-    {
-    }
+    private DataHolder() {}
 
-    public static DataHolder getInstance()
-    {
-        if (dataholder == null)
-        {
+    public static DataHolder getInstance() {
+        if (dataholder == null) {
             dataholder = new DataHolder();
         }
 
@@ -33,8 +28,6 @@ public final class DataHolder {
     }
 
     public void setController (HelloController hello) { this.hc = hello; }
-
-
 
     public SerializeClassData getClassData()
     {

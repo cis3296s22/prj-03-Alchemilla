@@ -21,7 +21,6 @@ public class SerializeClassData {
      * @throws ClassNotFoundException can't find class in file requested
      */
     public Plant getPlant(String path) throws IOException, ClassNotFoundException {
-
         return (Plant)retrieveObject(path);
     }
 
@@ -43,7 +42,6 @@ public class SerializeClassData {
      * @throws ClassNotFoundException can't find class in file requested
      */
     public Profile getProfile(String path) throws IOException, ClassNotFoundException {
-
         return (Profile)retrieveObject(path);
     }
 
@@ -56,7 +54,6 @@ public class SerializeClassData {
     public boolean storePlant(String path, Plant plant){
         return storeObject(path, plant);
     }
-
 
     /**
      * Generalized adapter method for the ObjectInputStream class. Use to retrieve stored Object data
@@ -77,21 +74,17 @@ public class SerializeClassData {
      * @param ob Object to be stored
      * @return true on successful write
      */
-    private boolean storeObject(String path, Object ob){
-
+    private boolean storeObject(String path, Object ob) {
         try {
             File f = new File(path);
             f.createNewFile();
             FileOutputStream fs = new FileOutputStream(path);
             ObjectOutputStream os = new ObjectOutputStream(fs);
             os.writeObject(ob);
-
         } catch(IOException e) {
             e.printStackTrace();
             return false;
         }
         return true;
     }
-
-
 }

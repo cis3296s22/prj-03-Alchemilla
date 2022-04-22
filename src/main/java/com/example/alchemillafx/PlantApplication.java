@@ -14,11 +14,9 @@ import javafx.scene.text.*;
 // import java.awt.image.BufferedImage;
 import java.io.*;
 // import javax.imageio.ImageIO;
-public class PlantApplication extends Application
-{
+public class PlantApplication extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception
-    {
+    public void start(Stage primaryStage) throws Exception  {
         // Sets Title, Loads the FXML File
         Parent root = FXMLLoader.load(getClass().getResource("plant-form.fxml"));
         primaryStage.setTitle("Enter Plant Information");
@@ -30,5 +28,4 @@ public class PlantApplication extends Application
     {
         Application.launch(args);
     }
-
 }

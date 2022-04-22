@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.util.Calendar;
 
 public class RegistrationController {
-
     @FXML
     private TextField nameInput;
 
@@ -37,11 +36,8 @@ public class RegistrationController {
         Profile newProf = new Profile(nameString, Calendar.getInstance());
         SerializeClassData sc = new SerializeClassData();
         File f = new File(nameString);
-        try {
-            f.createNewFile();
-        }
-        catch (IOException io)
-        {
+        try { f.createNewFile(); }
+        catch (IOException io) {
             io.printStackTrace();
         }
 

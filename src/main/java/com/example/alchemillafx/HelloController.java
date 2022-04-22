@@ -7,8 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
@@ -29,7 +27,6 @@ import java.util.ResourceBundle;
  * JavaFX Controller that handles displaying profile and plant information in the main scene
  */
 public class HelloController implements Initializable {
-
 
     /**
      * Display at a glance information about plants
@@ -63,9 +60,7 @@ public class HelloController implements Initializable {
     // SerializeClassData sc;
 
     @FXML
-    private void displayPlant(BufferedImage plant){
-
-    }
+    private void displayPlant(BufferedImage plant){}
 
     @FXML
     private MenuItem accountItem;
@@ -77,34 +72,22 @@ public class HelloController implements Initializable {
     private MenuItem update;
 
     @FXML
-    private void plantLaunch(ActionEvent e)
-    {
-
+    private void plantLaunch(ActionEvent e) {
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("plant-form.fxml"));
-        try {
-            Parent root = loader.load();
-        }
-        catch (IOException ioe)
-        {
+        try { Parent root = loader.load(); }
+        catch (IOException ioe) {
             System.out.println("IOException");
         }
 
         Stage s = new Stage();
         PlantApplication plantApp = new PlantApplication();
-        ;
         try {
             plantApp.start(s);
-        }
-
-        catch(Exception exception)
-        {
-
-        }
+        } catch(Exception exception) {}
     }
 
     @FXML
-    private void profileLaunch(ActionEvent e)
-    {
+    private void profileLaunch(ActionEvent e) {
         /*
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("plant-form.fxml"));
         Parent root = loader.load();
@@ -112,14 +95,8 @@ public class HelloController implements Initializable {
 
         Stage stage = new Stage();
         RegistrationApplication regApp = new RegistrationApplication();
-        try {
-            regApp.start(stage);
-        }
-
-        catch(Exception exception)
-        {
-
-        }
+        try { regApp.start(stage); }
+        catch(Exception exception) {}
     }
 
     @FXML
@@ -127,7 +104,6 @@ public class HelloController implements Initializable {
     {
         this.initialize(null, null);
     }
-
 
     /**
      * Display Plant description and Plant instruction data members in the scrollable pane
@@ -150,9 +126,7 @@ public class HelloController implements Initializable {
         TextFlow desFlow = new TextFlow(desBold,descriptionBox,instruction,instructionBox);
         description.getChildren().clear();
         description.getChildren().addAll(desBold,descriptionBox,instruction,instructionBox);
-
     // = desFlow;
-
     }
 
     /**
@@ -161,7 +135,6 @@ public class HelloController implements Initializable {
      */
     @FXML
     private void displayLabel(Plant plant){
-
         Text nameLabel = new Text();
         nameLabel.setText("Name: ");
         nameLabel.setFont(Font.font("Helvetica",FontWeight.BOLD,14));
@@ -174,11 +147,8 @@ public class HelloController implements Initializable {
         String w = "Water every "+plant.getWaterDelta()+" days.\n";
         water.setText(w);
 
-
         plantData.getChildren().clear();
         plantData.getChildren().addAll(nameLabel,name,waterLabel,water);
-
-
     }
 
     /**
@@ -189,12 +159,9 @@ public class HelloController implements Initializable {
         DataHolder holder = DataHolder.getInstance();
         SerializeClassData sc = new SerializeClassData();
 
-        if (holder.getClassData() != null) // if the first time
-        {
+        if (holder.getClassData() != null) { // if the first time
             sc = holder.getClassData();
-        }
-        else
-        {
+        } else {
             holder.setClassData(sc);
         }
 
@@ -207,8 +174,7 @@ public class HelloController implements Initializable {
             // {
                 profile = sc.getProfile(currentProfile);
             // }
-            if (holder.getProfile() != null) // this might be the worst code logic i've ever written but it is 12:30
-            {
+            if (holder.getProfile() != null) {// this might be the worst code logic i've ever written but it is 12:30
                 profile = holder.getProfile();
             }
 
@@ -224,16 +190,14 @@ public class HelloController implements Initializable {
             Iterator i = plantLinkedList.iterator();
             plantList.getItems().clear();
 
-            while (i.hasNext()){
+            while (i.hasNext()) {
                Plant tempPlant = (Plant)i.next();
                plantList.getItems().add(tempPlant.getPlantName());
                plants.add(tempPlant.getPlantName());
-
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-
 
         plantList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>(){
             /**
@@ -245,7 +209,6 @@ public class HelloController implements Initializable {
              */
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2){
-
                 currentPlantName = plantList.getSelectionModel().getSelectedItem();
 
                 //plantData.setText(currentPlantName);
@@ -254,7 +217,7 @@ public class HelloController implements Initializable {
                 LinkedList<Plant> lp = profile.getPlants();
                 Iterator i = lp.iterator();
 
-                while(i.hasNext()){
+                while(i.hasNext()) {
                     Plant p = (Plant) i.next();
                     if (p.getPlantName().equals(currentPlantName)){
                         currentPlant = p;
@@ -262,18 +225,13 @@ public class HelloController implements Initializable {
                         displayDescription(p.getDescription(),p.getInstructions());
                         displayLabel(p);
                         try {
-
-
                             plantImage.setImage(SwingFXUtils.toFXImage(p.getPlantImage(),null));
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
                 }
-
             }
-
         });
-
     }
 }

@@ -10,13 +10,13 @@ import java.util.Objects;
  * Class for storing information of a single plant. Implements serializable for easy storage.
  */
 public class Plant implements Serializable {
-    private String plantImage;
-    private String plantName;
-    private Integer waterDelta;
-    private Integer foodDelta;
-    private String food;
-    private String instructions;
-    private String description;
+    private final String plantImage;
+    private final String plantName;
+    private final Integer waterDelta;
+    private final Integer foodDelta;
+    private final String food;
+    private final String instructions;
+    private final String description;
 
     /**
      * Plant constructor. Designed to be form fill-able to work with our GUI interface (JavaFX popup form)

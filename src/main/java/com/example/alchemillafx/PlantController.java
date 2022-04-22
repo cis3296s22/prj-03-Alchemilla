@@ -25,8 +25,7 @@ import javafx.event.ActionEvent;
 
 import javax.swing.*;
 
-public class PlantController implements Initializable
-{
+public class PlantController implements Initializable {
     @FXML
     private Text actiontarget;
 
@@ -55,8 +54,7 @@ public class PlantController implements Initializable
     public Profile profile;
     public String currentProfile = "joe"; // hardcoded, this doesn't change with set method for some reason
 
-    public String getCurrentProfile()
-    {
+    public String getCurrentProfile() {
         return currentProfile;
     }
 
@@ -113,27 +111,21 @@ public class PlantController implements Initializable
     }
 
     @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-
-    }
+    public void initialize(URL arg0, ResourceBundle arg1) {}
 /*
     private BufferedImage readImage(String path)
     {
         BufferedImage image;
 
-        try
-        {
+        try {
             File file = new File(path);
             image = ImageIO.read(file);
 
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
             image = null;
             return image; // this gotta be bad programming
         }
-
         return image;
     }
 */

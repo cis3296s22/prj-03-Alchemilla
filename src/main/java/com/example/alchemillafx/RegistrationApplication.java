@@ -6,9 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class RegistrationApplication extends Application{
+public class RegistrationApplication extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("registration.fxml"));
         primaryStage.setTitle("Sign Up for Alchemilla");
         primaryStage.setScene(new Scene(root, 800, 500));
@@ -18,5 +18,4 @@ public class RegistrationApplication extends Application{
     public static void main(String[] args) {
         launch(args);
     }
-
 }
