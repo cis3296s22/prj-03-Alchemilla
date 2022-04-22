@@ -64,7 +64,7 @@ public class Profile implements Serializable {
 
     /**
      * get list of plants
-     * @return LinkedList<Plant>
+     * @return LinkedList of Plants
      */
     public LinkedList<Plant> getPlants() {
         return plants;
@@ -72,7 +72,7 @@ public class Profile implements Serializable {
 
     /**
      * Replace list of plants with another list of plants
-     * @param plants LinkedList<Plant>
+     * @param plants LinkedList of Plants
      */
     public void setPlants(LinkedList<Plant> plants) {
         this.plants = plants;
