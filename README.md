@@ -22,12 +22,12 @@ You now have a copy of the release zip!
 
 # How to Use
   
-  Your application will launch with a default profile already installed. With the current build, you can add plants to this profile. 
+  Your application will launch with a default profile and plants already installed. With the current build, you can add plants to this profile. 
   
   # Adding New Plants
 
   -Go to File-> Register New Plant
-  -Fill the Pop-Up form
+  -Fill the Pop-Up form with the appropriate information
   -Select 'Submit Plant Information' and close the form
   -Your plant should now appear in the plant list on the main scene page!
   
