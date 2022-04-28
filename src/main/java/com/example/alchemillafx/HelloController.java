@@ -4,11 +4,17 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.*;
+import javafx.event.ActionEvent;
+import javafx.stage.Stage;
 
 
 import java.awt.image.BufferedImage;
@@ -78,6 +84,89 @@ public class HelloController implements Initializable {
     }
 
     /**
+     * MenuItem to open Account Registration Scene
+     */
+    @FXML
+    private MenuItem accountItem;
+
+    /**
+     * MenuItem to open Plant Form
+     */
+    @FXML
+    private MenuItem plantItem;
+
+    /**
+     * Calls initialize() to update main scene
+     */
+    @FXML
+    private MenuItem update;
+
+    /**
+     * plantItem on click method to launch plant form scene
+     * @param e plantItem has been clicked
+     */
+    @FXML
+    private void plantLaunch(ActionEvent e)
+    {
+
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("plant-form.fxml"));
+        try {
+            Parent root = loader.load();
+        }
+        catch (IOException ioe)
+        {
+            System.out.println("IOException");
+        }
+
+        Stage s = new Stage();
+        PlantApplication plantApp = new PlantApplication();
+        ;
+        try {
+            plantApp.start(s);
+        }
+
+        catch(Exception exception)
+        {
+
+        }
+    }
+
+    /**
+     * accountItem on click method to launch account registration scene
+     * @param e accountItem has been clicked
+     */
+    @FXML
+    private void profileLaunch(ActionEvent e)
+    {
+        /*
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("plant-form.fxml"));
+        Parent root = loader.load();
+        */
+
+        Stage stage = new Stage();
+        RegistrationApplication regApp = new RegistrationApplication();
+        try {
+            regApp.start(stage);
+        }
+
+        catch(Exception exception)
+        {
+
+        }
+    }
+
+    /**
+     * update on click method to update main scene
+     * @param e update has been clicked
+     */
+    @FXML
+    private void updateGUI(ActionEvent e)
+    {
+        this.initialize(null, null);
+    }
+
+
+    /**
      * Display Plant description and Plant instruction data members in the scrollable pane
      * @param des Plant.description
      * @param inst Plant.instructions
@@ -134,11 +223,37 @@ public class HelloController implements Initializable {
      */
     @Override
     public void initialize(URL arg0, ResourceBundle arg1){
+        DataHolder holder = DataHolder.getInstance();
         SerializeClassData sc = new SerializeClassData();
+
+        if (holder.getClassData() != null) // if the first time
+        {
+            sc = holder.getClassData();
+        }
+        else
+        {
+            holder.setClassData(sc);
+        }
+
         try {
             profile = sc.getProfile(currentProfile);
+            if (holder.getProfile() != null) // this might be the worst code logic i've ever written but it is 12:30
+            {
+                profile = holder.getProfile();
+            }
+
+            // System.out.println("HelloController profile: " + profile);
+
+            // Get instance or create new instance of singleton obj and pass data
+            holder.setProfile(profile);
+
             LinkedList<Plant> plantLinkedList = profile.getPlants();
+            // plants.clear();
+
+            plants = new LinkedList<String>(); // Bad code, bad code
             Iterator i = plantLinkedList.iterator();
+            plantList.getItems().clear();
+
             while (i.hasNext()){
                Plant tempPlant = (Plant)i.next();
                plantList.getItems().add(tempPlant.getPlantName());

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/alchemillaFx.iml" filepath="$PROJECT_DIR$/alchemillaFx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alchemillafx.iml" filepath="$PROJECT_DIR$/alchemillafx.iml" />
     </modules>
   </component>
 </project>
